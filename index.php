@@ -1,37 +1,16 @@
 <?php
 require 'header.php';
-
-$pdo = new PDO('mysql:host=localhost;dbname=cheval', 'root', 'root');
-// $sth = $dbh->query("SELECT *  FROM information_schema.tables WHERE table_type='base table' AND ");
-// foreach ($sth as $row){
-// 	echo "<tr><td>";
-// 	print_r($row[2]);
-// 	echo "</td>";
-// 	echo "<td>";
-// 	print_r($row[3]);
-// 	echo "</td></tr>";
-// }
-// echo "</table>";
-$sql = "SHOW TABLES";
- 
-//Prepare our SQL statement,
-$statement = $pdo->prepare($sql);
- 
-//Execute the statement.
-$statement->execute();
- 
-//Fetch the rows from our statement.
-$tables = $statement->fetchAll(PDO::FETCH_NUM);
- 
-echo '<table class="table">';
-
-//Loop through our table names.
-foreach($tables as $table){
-    //Print the table name out onto the page.
-    echo '<tr><td><a href="/table.php?id='.$table[0].'">'.$table[0].'</a></td></tr>';
-}
-
-echo "</table>";
-
+?>
+<body>
+<div id="logindiv" align="center">
+	<h1>Connexion</h1>
+	<form id="loginform" method="POST">
+		<input id="name" type="text" name="name" placeholder="Nom d'utilisateur">
+		<input id="password" type="password" name="password" placeholder="Mot de passe">
+		<input id="loginbutton" type="button" name="submit" value="Se connecter">
+	</form>
+</div>
+</body>
+<?php
 require 'footer.php';
 ?>
