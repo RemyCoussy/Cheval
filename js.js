@@ -38,8 +38,14 @@ function login()
                     icon: $.sweetModal.ICON_WARNING
                 });
         	}
-        	else{
+        	else if(answer=="1"){
         		location.href="main.php";
         	}
+            else{
+                $.sweetModal({
+                    content: answer,
+                    icon: $.sweetModal.ICON_WARNING
+                });
+            }
         })
     }
