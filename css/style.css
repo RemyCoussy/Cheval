@@ -1,3 +1,12 @@
 body{
 	font-family: "Nunito", sans-serif;
 }
+h1,h2,h3,h4,h5,h6,th,a,button{
+	font-family: "Raleway", sans-serif;
+	font-weight: 400;
+}
+.nav{
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 30px;
+	width: 100%;
+}

@@ -22,7 +22,7 @@ foreach($data['data'] as $table){
 			echo '<td>' . $table[$i] . '</td>';
 		}
     }
-    echo '<td><a href="/edit.php?id=' . "$table[0]" . '">Edit</a></td></tr>';
+    echo '<td><a href="/edit.php?id=' . "$table[0]" . '"><i class="far fa-edit"></i></a><a href="/delete.php"><i class="far fa-trash-alt"></i></a></td></tr>';
 }
 
 echo "</table>";
