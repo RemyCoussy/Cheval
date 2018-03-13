@@ -1,4 +1,45 @@
 $( document ).ready(function() {
+    $.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return decodeURI(results[1]) || 0;
+    }
+}
+    $("#deletebutton").click(function()
+    {
+        $.sweetModal.confirm('Ces données seront effaces', function() {
+         var selected = new Array();
+        $("input:checkbox[name=delete]:checked").each(function() {
+             selected.push($(this).val());
+        });
+        if(selected[0]==null)
+        {
+            $.sweetModal({
+                    content: "Vous devez au moins cocher une ligne",
+                    icon: $.sweetModal.ICON_WARNING
+                });
+            return null;
+        }
+        var id=$.urlParam('id');
+        $.post("model/delete.php",{selected:selected,id:id},function(answer)
+        {
+            if(answer=="1")
+            {
+                window.location.reload();
+            }
+            else{
+                $.sweetModal({
+                content: answer,
+                icon: $.sweetModal.ICON_ERROR
+            });
+            }
+        });
+        
+        });
+    });
 	$.fn.pressEnter = function(fn) {  
 
     return this.each(function() {  
