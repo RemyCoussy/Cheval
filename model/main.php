@@ -2,7 +2,7 @@
 session_start();
 
 function getTables(){
-	$pdo = new PDO('mysql:host=localhost;dbname=cheval', $_SESSION['user'], $_SESSION['pass']);
+	$pdo = new PDO('mysql:host=localhost;dbname=chevaux', $_SESSION['user'], $_SESSION['pass']);
 	// $sth = $dbh->query("SELECT *  FROM information_schema.tables WHERE table_type='base table' AND ");
 	// foreach ($sth as $row){
 	// 	echo "<tr><td>";
