@@ -38,11 +38,8 @@ function login()
                     icon: $.sweetModal.ICON_WARNING
                 });
         	}
-            $.sweetModal({
-                    content: answer,
-                    icon: $.sweetModal.ICON_WARNING
-                });
-            return null;
-        	
+        	else{
+        		location.href="main.php";
+        	}
         })
     }
