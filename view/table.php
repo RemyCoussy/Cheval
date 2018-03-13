@@ -2,7 +2,7 @@
 require 'header.php';
 
 echo '<button>Ajouter une ligne</button>';
-echo '<button>Supprimer la selection</button>';
+echo '<button id="deletebutton">Supprimer la selection</button>';
 
 echo '<table class="table table-hover table-striped table-bordered"><thead><tr><th></th>';
 /* Affichage nom des colonnes */

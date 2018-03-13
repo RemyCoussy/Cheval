@@ -6,7 +6,6 @@ function getColumns(){
 	/* Requête nom des colonnes */
 	$statement = $pdo->query("DESCRIBE $id");
 	$result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
 	return $result;
 }
 function getData(){
