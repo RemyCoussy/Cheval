@@ -3,8 +3,8 @@ require 'header.php';
 
 $id = $_GET[id];
 
-/* Connexion à la base */
-$pdo = new PDO('mysql:host=localhost;dbname=cheval', 'root', 'root');
+session_start();
+$pdo = new PDO('mysql:host=localhost;dbname=cheval', $_SESSION['user'], $_SESSION['pass']);
 
 /* Requête nom des colonnes */
 $statement = $pdo->query('DESCRIBE ' . $id);

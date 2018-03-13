@@ -1,7 +1,7 @@
 <?php
 require 'header.php';
-
-$pdo = new PDO('mysql:host=localhost;dbname=cheval', 'root', 'root');
+session_start();
+$pdo = new PDO('mysql:host=localhost;dbname=cheval', $_SESSION['user'], $_SESSION['pass']);
 // $sth = $dbh->query("SELECT *  FROM information_schema.tables WHERE table_type='base table' AND ");
 // foreach ($sth as $row){
 // 	echo "<tr><td>";

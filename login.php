@@ -6,6 +6,9 @@
 	$sql="SHOW TABLES";
 	$statement = $pdo->prepare($sql);
 	$statement->execute();
+	session_start();
+	$_SESSION['user']=$name;
+	$_SESSION['pass']=$password;
 	}
 	catch(PDOException $e)
 	{
