@@ -11,8 +11,8 @@
 	<header>
 		<nav>
 			<ul>
-				<li><a href="/main.php">Accueil</a></li>
-				<li><a href="/index.php">Déconnexion</a></li>
+				<li><a href="/Cheval/main.php">Accueil</a></li>
+				<li><a href="/Cheval/index.php">Déconnexion</a></li>
 			</ul>
 		</nav>
 	</header>
