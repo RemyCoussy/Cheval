@@ -12,7 +12,6 @@ $( document ).ready(function() {
     {
         var table=$.urlParam('id');
         var str = $("#ajoutform").serialize();
-        alert(str);
     });
     $("#deletebutton").click(function()
     {

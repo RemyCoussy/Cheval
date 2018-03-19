@@ -10,17 +10,17 @@ foreach($data['columns'] as $column){
 
 	echo '<th>' . $column['Field'] . '</th>';
 }
-$count=0;
+$count=-1;
 echo "<th>Options</th></tr></thead>";
-echo "<form id='ajoutform'><tr><th></th>";
+echo "<form id='ajoutform' action='/Cheval/model/new.php' method='post'><tr><th></th>";
 foreach($data['columns'] as $column){
 	$count++;
-	if($count==1)
+	if($count==0)
 	{
 		echo '<th></th>';
 	}
 	else{
-		echo '<th><input type="text" name="'.$column['Field'].'" id="'.$column['Field'].'>"></th>';
+		echo '<th><input type="text" name="'.$count.'" id="'.$column['Field'].'>"></th>';
 	}
 	
 }
@@ -43,6 +43,7 @@ foreach($data['data'] as $table){
 }
 
 echo "</table>";
+$_SESSION['currenttable']=$_GET['id'];
 
 require 'footer.php';
 ?>
