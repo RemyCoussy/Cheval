@@ -12,6 +12,9 @@ $( document ).ready(function() {
     {
         var table=$.urlParam('id');
         var str = $("#ajoutform").serialize();
+        $.post('/Cheval/model/new.php',{str:str});
+        window.location.reload();
+
     });
     $("#deletebutton").click(function()
     {

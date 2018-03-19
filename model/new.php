@@ -7,7 +7,7 @@ $ids="'";
         $ids=$ids.$_POST[$i]."','";
     }
     $new=substr_replace($ids, "", -2);
-$statement = $pdo->query("INSERT INTO ".$_SESSION['currenttable']." values (null,".$new.")");
+$statement = $pdo->prepare("INSERT INTO ".$_SESSION['currenttable']." values (null,".$new.")");
 if($statement->execute())
 {
 	header("Location: /Cheval/table.php?id=".$_SESSION['currenttable']);

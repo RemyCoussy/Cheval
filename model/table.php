@@ -13,7 +13,7 @@ function getData(){
 	$pdo = new PDO('mysql:host=localhost;dbname=chevaux', $_SESSION['user'], $_SESSION['pass']);
 
 	/* Requête données */
-	$sql = "SELECT * FROM $id";
+	$sql = "SELECT * FROM $id ORDER BY 1 desc";
 	$statement = $pdo->prepare($sql);
 	$statement->execute();
 	$tables = $statement->fetchAll(PDO::FETCH_NUM);
