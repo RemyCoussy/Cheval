@@ -8,6 +8,12 @@ $( document ).ready(function() {
        return decodeURI(results[1]) || 0;
     }
 }
+    $("#addbutton").click(function()
+    {
+        var table=$.urlParam('id');
+        var str = $("#ajoutform").serialize();
+        alert(str);
+    });
     $("#deletebutton").click(function()
     {
         var selected = new Array();
