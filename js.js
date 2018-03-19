@@ -10,8 +10,7 @@ $( document ).ready(function() {
 }
     $("#deletebutton").click(function()
     {
-        $.sweetModal.confirm('Ces données seront effaces', function() {
-         var selected = new Array();
+        var selected = new Array();
         $("input:checkbox[name=delete]:checked").each(function() {
              selected.push($(this).val());
         });
@@ -23,6 +22,8 @@ $( document ).ready(function() {
                 });
             return null;
         }
+        $.sweetModal.confirm('Ces données seront effaces', function() {
+         
         var id=$.urlParam('id');
         $.post("model/delete.php",{selected:selected,id:id},function(answer)
         {
