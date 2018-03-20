@@ -10,3 +10,13 @@ h1,h2,h3,h4,h5,h6,th,a,button{
 	margin-bottom: 30px;
 	width: 100%;
 }
+input {
+ border:none;
+
+}
+input:active {
+    border:1px solid #000;
+}
+.no{
+	border: 1px solid #000;
+}

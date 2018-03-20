@@ -8,14 +8,7 @@ $( document ).ready(function() {
        return decodeURI(results[1]) || 0;
     }
 }
-    $("#addbutton").click(function()
-    {
-        var table=$.urlParam('id');
-        var str = $("#ajoutform").serialize();
-        $.post('/Cheval/model/new.php',{str:str});
-        window.location.reload();
-
-    });
+    
     $("#deletebutton").click(function()
     {
         var selected = new Array();
@@ -99,3 +92,23 @@ function login()
             }
         })
     }
+    function edit(id){
+        $('#edit'+id).each(function() {
+   var row = this;
+   var values = "";
+   $('input', this).each(function() {
+      values = values + ",'" + $(this).val() + "'"
+   });
+   values = values.substring(1);
+
+   $('.hist', row).html(values); 
+        $.post('/Cheval/model/update.php',{id:id,values:values},function(answer)
+            {
+                if(answer=="1"){window.location.reload();}
+                else{
+                   alert(answer); 
+                }    
+            });
+});
+    }
+    

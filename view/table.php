@@ -20,26 +20,32 @@ foreach($data['columns'] as $column){
 		echo '<th></th>';
 	}
 	else{
-		echo '<th><input type="text" name="'.$count.'" id="'.$column['Field'].'>"></th>';
+		echo '<th><input type="text" class="no" name="'.$count.'" id="'.$column['Field'].'>"></th>';
 	}
 	
 }
 echo '<th><button id="addbutton">Ajouter</button></th></tr></form>';
 
 /* Affichage données */
+//echo '<form method="post" action="/Cheval/model/update.php">';
 foreach($data['data'] as $table){
 
-	echo '<tr><td><input type="checkbox" name="delete" value=' . "$table[0]" . '></td>';
+	echo '<tr id="edit'.$table[0].'"><td><input type="checkbox" name="delete" value=' . "$table[0]" . '></td>';
 	for($i=0;$i<$_SESSION['num'];$i++){
+		
 		if($table[$i] === NULL){
-
-			echo '<td>NULL</td>';
+			echo '<td><input type="text" name="" value="NULL"></td>';
 		}else{
-
-			echo '<td>' . $table[$i] . '</td>';
-		}
+			if($i==0){
+				echo '<td>' . $table[$i] . '</td>';
+			}
+			else{
+				echo '<td><input type="text" name="" value="' . $table[$i] . '"></td>';
+			}
+		}		
     }
-    echo '<td><a href="/edit.php?id=' . "$table[0]" . '"><i class="far fa-edit"></i></a><a href="/Cheval/model/deleteone.php?id='.$table[0].'&table='.$_GET['id'].'"><i class="far fa-trash-alt"></i></a></td></tr>';
+    
+    echo '<td><a href="#" onclick="edit('.$table[0].');"><i class="far fa-edit"></i></a><a href="/Cheval/model/deleteone.php?id='.$table[0].'&table='.$_GET['id'].'"><i class="far fa-trash-alt"></i></a></td></tr>';
 }
 
 echo "</table>";
